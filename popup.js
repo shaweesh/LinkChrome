@@ -87,10 +87,14 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 });
 // Show a loading message or spinner
 function showLoadingMessage() {
+  try{
   const loadingMessage = document.createElement("p");
   loadingMessage.textContent = "Loading...";
   document.body.appendChild(loadingMessage);
   setTimeout(() => {
     loadingMessage.remove();
   }, 1000); // Simulating a delay for loading
+} catch(e){
+  //TODO
+}
 }
